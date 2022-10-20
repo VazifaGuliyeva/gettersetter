@@ -1,40 +1,26 @@
 public class Main{
     public static void main(String [] args){
-        Product product1=new Product(1,"Lenevo",2000,"32 gb");// referance yaratmaq
+        Product product1=new Product(1,"Lenevo",2000,"64",10,8);// referance yaratmaq
 
 
         Product product2=new Product();
-        product2.id=2;
-        product2.name="HP";
-        product2.unitPrice=12000;
-        product2.detail="16 gb ram";
-
-        Product product3=new Product();
-        product3.id=3;
-        product3.name="Acer";
-        product3.unitPrice=16000;
-        product3.detail="16 gb ram";
-
-        Product[] products={product1,product2,product3};
-        System.out.println(products.length);
-
-        for(Product product : products){
-            System.out.println(product.name);
-        }
+        product2.setId(2);
+        product2.setName("Lenevo15");
+        product2.setDetail("16 gb ram");
+        product2.setDiscount(10);
+        product2.setUnitPrice(16000);
+        System.out.println(product2.getUnitPriceAfterDiscount());
 
         Category category1=new Category();
-        category1.id=1;
-        category1.name="Bilgisaray";
+        category1.setId(1);
+        category1.setName("Icecek");
 
         Category category2=new Category();
-        category2.id=2;
-        category2.name="Ev/Bahce";
+        category2.setId(2);
+        category2.setName("Yiyecek");
 
-        ProductManager productManager=new ProductManager();
-        productManager.addToCart(product1);
-        productManager.addToCart(product2);
-
-        productManager.addToCart(product3);
+        System.out.println(category1.getName());
+        System.out.println(category2.getName());
 
 
 
